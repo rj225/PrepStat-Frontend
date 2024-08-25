@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <>
       {/* mobile view */}
-      <Header className="bg-[#f8f3ed] text-[#4E342E] flex overflow-hidden justify-between items-center p-4 relative">
+      <Header className="bg-[#f8f3ed] text-[#4E342E] sm:hidden flex overflow-hidden justify-between items-center p-4 relative">
       <div className="font-bold text-2xl">
         <PrepStat />
       </div>
