@@ -10,7 +10,7 @@ const MainContent = () => {
   return (
     <Layout className="min-h-screen font-serif">
       <Navbar />
-      <Layout className="bg-gradient-to-br from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4] flex flex-col md:flex-row">
+      <Layout className="bg-gradient-to-b from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4] flex flex-col md:flex-row">
         <CustomSidebar className="w-full md:w-1/4 lg:w-1/5" />
         <Content className="p-4 md:p-6 flex-1">
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">

@@ -95,11 +95,11 @@ const Navbar = () => {
             placeholder="Search..."
             className="p-2 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:border-transparent border rounded-xl"
           />
-          <button className="flex items-center space-x-2 bg-back text-font h-12 p-3 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
+          <button className="flex items-center space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <IoIosMail style={{ fontSize: "25px" }} className="text-lg" />
             <span>Contact Me</span>
           </button>
-          <button className="flex items-center  space-x-2 bg-back text-font h-12 p-3 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
+          <button className="flex items-center  space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <FaQuestionCircle className="text-lg" />
             <span>FAQ</span>
           </button>
