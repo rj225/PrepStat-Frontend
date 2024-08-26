@@ -41,7 +41,11 @@ const topic = ["HCF","NUMBERS","PERCENTAGE","PROFIT","PC","BOAT","pipe","clock",
       <br />
       <ul className='grid grid-cols-3 gap-3 gap-y-10 content-center'>
         {topic.map((item, index) => (
-          <li key={index} className='text-lg flex items-center shadow-orange-50 text-font gap-3'><span className='text-back text-xl'><FaFileLines/></span> {item} </li>
+          <li key={index} className='text-lg hover:-translate-y-1 duration-300 cursor-pointer flex items-center shadow-orange-50 text-font gap-3 relative group'>
+            <span className='text-back text-xl'><FaFileLines/></span>
+             {item} 
+             <span className="absolute left-0 bottom-0 w-1/12 h-[2px] bg-back scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300"></span>
+             </li>
         ))}
       </ul>
     </div>
