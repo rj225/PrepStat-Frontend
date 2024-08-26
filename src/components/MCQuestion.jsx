@@ -18,10 +18,10 @@ function MCQuestion() {
       id: 1,
       question: "What is the largest planet in our solar system?",
       options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
+        { id: 1111, text: "Earth", isCorrect: false },
+        { id: 1112, text: "Jupiter", isCorrect: true },
+        { id: 31111, text: "Mars", isCorrect: false },
+        { id: 1154, text: "Venus", isCorrect: false }
       ],
       detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
     },
