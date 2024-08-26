@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { FaArrowCircleRight } from "react-icons/fa";
-
+import { FaCheckCircle } from 'react-icons/fa';
+import { FaTimesCircle } from 'react-icons/fa';
 function MCQuestion() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -25,193 +26,23 @@ function MCQuestion() {
       detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
     },
     {
-      id: 1,
+      id: 2,
       question: "What is the largest planet in our solar system?",
       options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
+        { id: 11, text: "Earth", isCorrect: false },
+        { id: 12, text: "Jupiter", isCorrect: true },
+        { id: 31, text: "Mars", isCorrect: false },
+        { id: 14, text: "Venus", isCorrect: false }
       ],
       detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
     },{
-      id: 1,
+      id: 3,
       question: "What is the largest planet in our solar system?",
       options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1, text: "Earth", isCorrect: false },
-        { id: 2, text: "Jupiter", isCorrect: true },
-        { id: 3, text: "Mars", isCorrect: false },
-        { id: 4, text: "Venus", isCorrect: false }
+        { id: 154, text: "Earth", isCorrect: false },
+        { id: 25, text: "Jupiter", isCorrect: true },
+        { id: 453, text: "Mars", isCorrect: false },
+        { id: 484, text: "Venus", isCorrect: false }
       ],
       detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
     },
