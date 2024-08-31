@@ -58,7 +58,7 @@ function MCQuestion() {
   const handleClickNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      window.scrollTo(0, 300);
+      window.scrollTo(0, 0);
     }
   };
 

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import QuestionsPage from './pages/QuestionsPage';
 import 'aos/dist/aos.css';
 import 'animate.css';
+import AboutPage from './pages/AboutPage';
+import Loader from './utils/Loader';
 
 const App = () => {
   return (
@@ -12,7 +14,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainContent />} />
         <Route path='/topics/:topic' element={<Topics />} />
-        <Route path='/topics/questions/:question' element={<QuestionsPage/>} />
+        <Route path='/topics/:questions/:question' element={<QuestionsPage/>} />
+        <Route path='/about' element={<AboutPage/>} />
+        <Route path='/load' element={<Loader/>}/>
       </Routes>
     </Router>
   );

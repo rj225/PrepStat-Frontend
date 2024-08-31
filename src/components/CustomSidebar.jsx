@@ -1,95 +1,30 @@
 import React from 'react';
 import { Layout, Menu, Tooltip } from 'antd';
-import { 
-  FaHome, 
-  FaInfoCircle, 
-  FaBook, 
-  FaUsers, 
-  FaChartBar 
-} from 'react-icons/fa'; 
-import { MdSupportAgent } from "react-icons/md";
-import { TiSortAlphabeticallyOutline } from "react-icons/ti";
+import items from './Items';
+import { useNavigate } from 'react-router-dom';
 
 const { Sider } = Layout;
 
-const items = [
-  {
-    key: '1',
-    icon: <FaHome style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="Home">
-        <span>Home</span>
-      </Tooltip>
-    ),
-  },
-  {
-    key: '2',
-    icon: <FaInfoCircle style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="About">
-        <span>About</span>
-      </Tooltip>
-    ),
-  },
-  {
-    key: 'sub1',
-    icon: <FaBook style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="Quants">
-        <span>Quants</span>
-      </Tooltip>
-    ),
-    children: [
-      {
-        key: '3',
-        icon: <FaBook style={{ fontSize: '20px' }} />,
-        label: (
-          <Tooltip title="Aptitude">
-            <span>Aptitude</span>
-          </Tooltip>
-        ),
-      },
-      {
-        key: '4',
-        icon: <FaBook style={{ fontSize: '20px' }} />,
-        label: (
-          <Tooltip title="Reasoning">
-            <span>Reasoning</span>
-          </Tooltip>
-        ),
-      },
-    ],
-  },
-  {
-    key: '5',
-    icon: <TiSortAlphabeticallyOutline style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="Verbal">
-        <span>Verbal</span>
-      </Tooltip>
-    ),
-  },
-  {
-    key: '7',
-    icon: <MdSupportAgent style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="Interview">
-        <span>Interview</span>
-      </Tooltip>
-    ),
-  },
-  {
-    key: '8',
-    icon: <FaChartBar style={{ fontSize: '20px' }} />,
-    label: (
-      <Tooltip title="Stats">
-        <span>Stats</span>
-      </Tooltip>
-    ),
-  },
-];
 
 const CustomSidebar = () => {
+
+  const navigate = useNavigate(); 
+
+  const setLocalStorage = (key) =>{
+    // console.log(key);
+    
+    sessionStorage.setItem('selectedMenuKey', key);
+  }
+
+  const handleMenuClick = (e) => {
+    // navigate(`/topic/${e.key}`);
+    const clickedItem = items.find(item => item.key === e.key) || items.flatMap(item => item.children || []).find(child => child.key === e.key);
+    // console.log(clickedItem);
+    setLocalStorage(clickedItem.key);
+    navigate(clickedItem.path)
+    
+    
+  };
   return (
     <Sider 
       style={{ backgroundColor: '#f8f3ed' }} 
@@ -98,11 +33,12 @@ const CustomSidebar = () => {
       collapsedWidth="50"
     >
       <Menu 
-        defaultSelectedKeys={['1']} 
+        defaultSelectedKeys={[sessionStorage.getItem('selectedMenuKey') || '1']} 
         mode="inline" 
         className="text-[#4E342E] text-base" 
         style={{ backgroundColor: '#f8f3ed' }}
         items={items}
+        onClick={handleMenuClick}
       />
     </Sider>
   );

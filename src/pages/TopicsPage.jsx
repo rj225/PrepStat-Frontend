@@ -9,7 +9,7 @@ import { FaFolderMinus } from "react-icons/fa";
 
 function Topics() {
   const { topic } = useParams();
-  const location = useLocation();
+  const location = useLocation(); 
 
   return (
     <div className=" h-full font-serif">
@@ -40,7 +40,7 @@ function Topics() {
           <div className="bg-white flex items-center gap-x-2 bg-opacity-25 p-4 md:p-6 rounded-lg shadow-2xl">
             <span className=" text-black text-4xl">
               <SiGooglenews />
-            </span>{" "}
+            </span>
             Susbscribe us for latest updates.
           </div>
         </div>

@@ -9,6 +9,16 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'blink-slow': 'blink 1.5s infinite',
+        'blink-fast': 'blink 1.5s infinite 0.75s', // Start half a cycle later
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 },
+        },
+      },
       colors: {
         // Add custom colors here
         'font': '#271409', // Example custom color
