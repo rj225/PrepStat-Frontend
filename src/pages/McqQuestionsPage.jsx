@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 
 function QuestionsPage() {
     const { question } = useParams();
+    console.log(question);
+    
 
 
   return (

@@ -12,6 +12,9 @@ function MCQuestion() {
   const [animationClass, setAnimationClass] = useState('');
 
   const questionsPerPage = 10;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log(apiUrl);
+
 
   const questions = [
     {

@@ -47,7 +47,7 @@ import {
               <span>Aptitude</span>
             </Tooltip>
           ),
-          path: '/topics/aptitude', 
+          path: '/topic/aptitude', 
         },
         {
           key: '4',
@@ -57,7 +57,7 @@ import {
               <span>Reasoning</span>
             </Tooltip>
           ),
-          path: '/topics/reasoning', 
+          path: '/topic/reasoning', 
         },
       ],
     },
@@ -69,7 +69,7 @@ import {
           <span>Verbal</span>
         </Tooltip>
       ),
-      path: '/topics/verbal', 
+      path: '/topic/verbal', 
     },
     {
       key: '7',
@@ -79,7 +79,7 @@ import {
           <span>Interview</span>
         </Tooltip>
       ),
-      path: '/topics/interview', 
+      path: '/topic/interview', 
     },
     {
       key: '8',
@@ -89,7 +89,7 @@ import {
           <span>Stats</span>
         </Tooltip>
       ),
-      path: '/topics/stats', 
+      path: '/topic/stats', 
     },
   ];
   

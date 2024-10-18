@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import CustomSidebar from "../components/CustomSidebar";
 import Navbar from "../components/Navbar";
 import Folder from "../components/Folders";
 import { SiGooglenews } from "react-icons/si";
 import Footer from "../components/Footer";
+import axios from "axios"
 import { FaFolderMinus } from "react-icons/fa";
 
 function Topics() {
   const { topic } = useParams();
   const location = useLocation(); 
+
 
   return (
     <div className=" h-full font-serif">
@@ -29,7 +31,7 @@ function Topics() {
               placeholder="Search.."
               className=" rounded-xl w-full"
             />
-            <Folder />
+            <Folder topic = {topic}/>
           </div>
           <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-40 flex items-center justify-center p-4 w-full">
             For AD

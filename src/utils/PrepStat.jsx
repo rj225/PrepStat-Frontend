@@ -1,13 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 export default function PrepStat() {
+
+  const navigate = useNavigate();
+
+  const clickHandler = (e) =>{
+    e.preventDefault();
+    sessionStorage.setItem('selectedMenuKey', 1);
+    navigate('/');
+  }
+
   return (
-    <Link to='/'>
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center cursor-pointer justify-center' onClick={clickHandler}>
     <h1 className="text-[#ff7b00] font-serif">Prep</h1>
     <h1 className="text-[#63423a] font-serif">Stat</h1>
     </div>
-    </Link>
   )
 }

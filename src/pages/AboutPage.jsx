@@ -2,11 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import CustomSidebar from '../components/CustomSidebar';
 
 const AboutPage = () => {
   return (
     <div className="bg-lightish-orange text-text-color min-h-screen">
       <Navbar />
+
+      <CustomSidebar className="w-full md:w-1/4 lg:w-1/5" />
 
       {/* About Us Section */}
       <section className="py-16 px-4 text-center">
