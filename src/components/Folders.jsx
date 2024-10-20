@@ -31,7 +31,7 @@ const Folder = (topic) => {
 
 // const sub = "Aptitude"
 const uri = location.pathname
-console.log(uri);
+// console.log(uri);
 
 
 // const Topics = ["HCF","NUMBERS","PERCENTAGE","PROFIT","PC","BOAT","pipe","clock",'calender',"NUMBERS","PERCENTAGE","PROFIT","PC","BOAT","pipe","clock",'calender','probablity']

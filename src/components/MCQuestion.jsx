@@ -1,61 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaCheckCircle } from 'react-icons/fa';
 import { FaTimesCircle } from 'react-icons/fa';
-function MCQuestion() {
+import axios from 'axios';
+
+function MCQuestion(topic) {
+  const [questions , setQuestions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const [animationClass, setAnimationClass] = useState('');
+  const [loading , setLoading] = useState(true);
 
   const questionsPerPage = 10;
+  // const apiUrl = import.meta.env.VITE_API_URL;
+  // console.log(topic);
+
   const apiUrl = import.meta.env.VITE_API_URL;
-  console.log(apiUrl);
+  const topics = topic.topic;
+  
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const getQuestion = await axios.get(`${apiUrl}/${topics[0]}/${topics[1]}`);
+        // console.log(getQuestion.data);
+        setQuestions(getQuestion.data);
+      } catch (error) {
+          console.log(error);
+          
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
 
-  const questions = [
-    {
-      id: 1,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 1111, text: "Earth", isCorrect: false },
-        { id: 1112, text: "Jupiter", isCorrect: true },
-        { id: 31111, text: "Mars", isCorrect: false },
-        { id: 1154, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },
-    {
-      id: 2,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 11, text: "Earth", isCorrect: false },
-        { id: 12, text: "Jupiter", isCorrect: true },
-        { id: 31, text: "Mars", isCorrect: false },
-        { id: 14, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },{
-      id: 3,
-      question: "What is the largest planet in our solar system?",
-      options: [
-        { id: 154, text: "Earth", isCorrect: false },
-        { id: 25, text: "Jupiter", isCorrect: true },
-        { id: 453, text: "Mars", isCorrect: false },
-        { id: 484, text: "Venus", isCorrect: false }
-      ],
-      detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
-    },
-    // Add more questions here
-  ];
+
+  // const questions = [
+  //   {
+  //     id: 1,
+  //     question: "What is the largest planet in our solar system?",
+  //     options: [
+  //       { id: 1111, text: "Earth", isCorrect: false },
+  //       { id: 1112, text: "Jupiter", isCorrect: true },
+  //       { id: 31111, text: "Mars", isCorrect: false },
+  //       { id: 1154, text: "Venus", isCorrect: false }
+  //     ],
+  //     detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
+  //   },
+  //   {
+  //     id: 2,
+  //     question: "What is the largest planet in our solar system?",
+  //     options: [
+  //       { id: 11, text: "Earth", isCorrect: false },
+  //       { id: 12, text: "Jupiter", isCorrect: true },
+  //       { id: 31, text: "Mars", isCorrect: false },
+  //       { id: 14, text: "Venus", isCorrect: false }
+  //     ],
+  //     detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
+  //   },{
+  //     id: 3,
+  //     question: "What is the largest planet in our solar system?",
+  //     options: [
+  //       { id: 154, text: "Earth", isCorrect: false },
+  //       { id: 25, text: "Jupiter", isCorrect: true },
+  //       { id: 453, text: "Mars", isCorrect: false },
+  //       { id: 484, text: "Venus", isCorrect: false }
+  //     ],
+  //     detailedAnswer: "Jupiter is the largest planet in our solar system. It has a mass more than twice that of all the other planets combined."
+  //   },
+  //   // Add more questions here
+  // ];
 
   const indexOfLastQuestion = currentPage * questionsPerPage;
   const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
   const currentQuestions = questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
-
+  // console.log(currentQuestions,"10");
+  
   const totalPages = Math.ceil(questions.length / questionsPerPage);
 
   const handleClickNext = () => {
@@ -72,9 +101,10 @@ function MCQuestion() {
     }
   };
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option.id);
-    setIsCorrect(option.isCorrect);
+  const handleOptionClick = (option , correctOption , id) => {    
+    setSelectedQuestion(id); 
+    setSelectedOption(option)   
+    setIsCorrect(option === correctOption);
   };
 
   const handleToggleDetails = (questionId) => {
@@ -83,33 +113,67 @@ function MCQuestion() {
       setTimeout(() => {
         setExpandedQuestion(null);
         setAnimationClass('');
-      }, 300); // Duration of fade out animation
+      }, 300); 
     } else {
       setExpandedQuestion(questionId);
       setAnimationClass('animate__animated animate__fadeIn');
     }
   };
 
+  if (loading) {
+    return <h1>Loading...</h1>
+  }
+
   return (
     <div className="px-4 py-2">
       {currentQuestions.map(item => (
         <div key={item.id}>
-          <h2 className="text-2xl mt-10 mb-5">{item.question}</h2>
+          <h2 className="text-xl mt-10 mb-5">{item.question}</h2>
           <ul className="space-y-3 mb-10">
-            {item.options.map(option => (
               <li
-                key={option.id}
-                className={`p-2 border rounded-lg flex items-center cursor-pointer ${selectedOption === option.id ? (isCorrect ? 'bg-green-100' : 'bg-red-100') : 'bg-white'}`}
-                onClick={() => handleOptionClick(option)}
+                className={`p-2 border rounded-lg flex animate__animated items-center  cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_d ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
+                onClick={() => handleOptionClick(item.option_d,item.answer,item.id)}
               >
-                {selectedOption === option.id && (
+                {selectedQuestion === item.id && selectedOption === item.option_d && (
                   <span className="text-xl mr-2">
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span>{option.text}</span>
+                <span className=' font-sans'>{item.option_d}</span>
               </li>
-            ))}
+              <li
+                className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_b ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
+                onClick={() => handleOptionClick(item.option_b,item.answer,item.id)}
+              >
+                {selectedQuestion === item.id && selectedOption === item.option_b && (
+                  <span className="text-xl mr-2">
+                    {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
+                  </span>
+                )}
+                <span className=' font-sans'>{item.option_b}</span>
+              </li>
+              <li
+                className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_c ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
+                onClick={() => handleOptionClick(item.option_c,item.answer,item.id)}
+              >
+                {selectedQuestion === item.id && selectedOption === item.option_c && (
+                  <span className="text-xl mr-2">
+                    {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
+                  </span>
+                )}
+                <span className=' font-sans'>{item.option_c}</span>
+              </li>
+              <li
+                className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_a ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
+                onClick={() => handleOptionClick(item.option_a,item.answer,item.id)}
+              >
+                {selectedQuestion === item.id && selectedOption === item.option_a && (
+                  <span className="text-xl mr-2">
+                    {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
+                  </span>
+                )}
+                <span className=' font-sans'>{item.option_a}</span>
+              </li>
           </ul>
 
           {/* Detailed Answer Section */}
@@ -132,7 +196,7 @@ function MCQuestion() {
               <div
                 className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
               >
-                <p>{item.detailedAnswer}</p>
+                <p className=' font-sans'>{item.explanation ? item.explanation : item.solution}</p>
               </div>
             )}
           </div>

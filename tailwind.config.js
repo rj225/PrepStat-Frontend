@@ -11,7 +11,7 @@ export default {
     extend: {
       animation: {
         'blink-slow': 'blink 1.5s infinite',
-        'blink-fast': 'blink 1.5s infinite 0.75s', // Start half a cycle later
+        'blink-fast': 'blink 1.5s infinite 0.75s',
       },
       keyframes: {
         blink: {
