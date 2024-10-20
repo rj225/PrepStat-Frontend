@@ -45,7 +45,7 @@ const uri = location.pathname
       <br />
       <br />
       <ul className='grid grid-cols-3 gap-3 gap-y-10 content-center'>
-        {Topics.map((item, index) => (
+        {Array.isArray(Topics) && Topics.map((item, index) => (
           <Link key={index} to={`${uri}/${item}`}>
           <li key={index} className='text-lg hover:-translate-y-1 duration-300 cursor-pointer flex items-center shadow-orange-50 text-font gap-3 relative group'>
             <span className='text-back text-xl'><FaFileLines/></span>

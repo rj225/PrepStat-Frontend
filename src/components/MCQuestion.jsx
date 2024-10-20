@@ -126,7 +126,7 @@ function MCQuestion(topic) {
 
   return (
     <div className="px-4 py-2">
-      {currentQuestions.map(item => (
+      {Array.isArray(currentQuestions) && currentQuestions.map(item => (
         <div key={item.id}>
           <h2 className="text-xl mt-10 mb-5">{item.question}</h2>
           <ul className="space-y-3 mb-10">
