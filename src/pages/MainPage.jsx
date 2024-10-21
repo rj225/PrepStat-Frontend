@@ -17,7 +17,7 @@ const MainContent = () => {
         <div className="flex-1">
           {/* Hero Section */}
           <section className="flex flex-col font-serif login_img_section items-center justify-center relative h-2/6 py-16">
-            <div className=" bg-gradient-to-r from-gray-800 from-45% via-orange-700 via-85% to-orange-200 opacity-70 absolute inset-0 z-0"></div>
+            <div className=" bg-gradient-to-r from-gray-800 from-45% via-orange-700 via-85% to-orange-200 opacity-50 absolute inset-0 z-0"></div>
             <div className="text-center p-8 z-10">
               <h1 className="text-5xl font-bold text-gray-200 mb-6 flex flex-wrap gap-2">
                 At
@@ -56,7 +56,8 @@ const MainContent = () => {
               {Features.map((feature) => (
                 <div
                   key={feature.id}
-                  className={`bg-[${feature.bgColor}] p-6 rounded-lg shadow-md flex flex-col items-center`}
+                  style={{ backgroundColor: feature.bgColor }}
+                  className={` p-6 rounded-lg shadow-md flex flex-col items-center`}
                 >
                   {feature.icon}
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
