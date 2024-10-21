@@ -1,7 +1,7 @@
 import React from "react";
 import CustomSidebar from "../components/CustomSidebar";
 import Navbar from "../components/Navbar";
-import "../css/MainPage.css";
+import "../css/Mainpage.css";
 import { Link } from "react-router-dom";
 import Features from "../data/Features";
 import { FaInfoCircle } from "react-icons/fa";
