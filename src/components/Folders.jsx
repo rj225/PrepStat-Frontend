@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Folder = (topic) => {
-  const [Topics, setTopics] = useState([]);
+  const [Topics, setTopics] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const apiUrl = import.meta.env.VITE_API_URL;
   // const { topics } = topic;
-
   useEffect(() => {
 
     const fetchData = async () => {
@@ -25,7 +24,8 @@ const Folder = (topic) => {
         setLoading(false);
       }
     };
-
+   
+    
     fetchData();
   }, [topic]);
 
