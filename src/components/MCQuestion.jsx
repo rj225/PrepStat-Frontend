@@ -5,6 +5,8 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { FaCheckCircle } from 'react-icons/fa';
 import { FaTimesCircle } from 'react-icons/fa';
 import axios from 'axios';
+import FirstCapital from '../utils/FirstCapital';
+import DetailedAnswer from '../utils/DetailedAnswer';
 
 function MCQuestion(topic) {
   const [questions , setQuestions] = useState([]);
@@ -17,15 +19,13 @@ function MCQuestion(topic) {
   const [loading , setLoading] = useState(true);
 
   const questionsPerPage = 10;
-  // const apiUrl = import.meta.env.VITE_API_URL;
-  // console.log(topic);
 
   const apiUrl = import.meta.env.VITE_API_URL;
   const topics = topic.topic;
   
 
   useEffect(() => {
-
+    window.scrollTo(0, 0);
     const fetchData = async () => {
       try {
         const getQuestion = await axios.get(`${apiUrl}/${topics[0]}/${topics[1]}`);
@@ -128,7 +128,7 @@ function MCQuestion(topic) {
     <div className="px-4 py-2">
       {Array.isArray(currentQuestions) && currentQuestions.map(item => (
         <div key={item.id}>
-          <h2 className="text-xl mt-10 mb-5">{item.question}</h2>
+          <h2 className="text-xl font-sans mt-10 mb-5">{FirstCapital(item.question)}</h2>
           <ul className="space-y-3 mb-10">
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center  cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_d ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -139,7 +139,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{item.option_d}</span>
+                <span className=' font-sans'>{FirstCapital(item.option_d)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_b ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -150,7 +150,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{item.option_b}</span>
+                <span className=' font-sans'>{FirstCapital(item.option_b)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_c ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -161,7 +161,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{item.option_c}</span>
+                <span className=' font-sans'>{FirstCapital(item.option_c)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_a ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -172,7 +172,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{item.option_a}</span>
+                <span className=' font-sans'>{FirstCapital(item.option_a)}</span>
               </li>
           </ul>
 
@@ -196,7 +196,7 @@ function MCQuestion(topic) {
               <div
                 className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
               >
-                <p className=' font-sans'>{item.explanation ? item.explanation : item.solution}</p>
+                <p className=' font-sans'>{<DetailedAnswer item={item}/>}</p>
               </div>
             )}
           </div>

@@ -49,15 +49,16 @@ const CustomSidebar = () => {
 
   return (
     <Sider
-      style={{ backgroundColor: "#f8f3ed" }}
-      className="bg-[#f9e6c1] lg:w-1/5 md:w-1/4 sm:w-1/3 w-full"
+    width={230}
+      style={{ backgroundColor: "#f8f3ed"}}
+      className="bg-[#f9e6c1]"
       breakpoint="md"
       collapsedWidth="50"
     >
       <Menu
-        selectedKeys={[selectedKey]}  // Ensure dynamic selection
+        selectedKeys={[selectedKey]}  
         mode="inline"
-        className="text-[#4E342E] text-base"
+        className="text-base font-semibold pl-2 pr-1 space-y-2 font-serif "
         style={{ backgroundColor: "#f8f3ed" }}
         items={items}
         onClick={handleMenuClick}

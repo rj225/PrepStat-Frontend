@@ -15,7 +15,7 @@ import {
       icon: <FaHome style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="Home">
-          <span>Home</span>
+           <span >Home</span>
         </Tooltip>
       ),
       path: '/', 
@@ -25,7 +25,7 @@ import {
       icon: <FaInfoCircle style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="About">
-          <span>About</span>
+           <span >About</span>
         </Tooltip>
       ),
       path: '/about', 
@@ -35,7 +35,7 @@ import {
       icon: <FaBook style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="Quants">
-          <span>Quants</span>
+           <span >Quants</span>
         </Tooltip>
       ),
       children: [
@@ -44,7 +44,7 @@ import {
           icon: <FaBook style={{ fontSize: '20px' }} />,
           label: (
             <Tooltip title="Aptitude">
-              <span>Aptitude</span>
+               <span >Aptitude</span>
             </Tooltip>
           ),
           path: '/topic/aptitude', 
@@ -54,7 +54,7 @@ import {
           icon: <FaBook style={{ fontSize: '20px' }} />,
           label: (
             <Tooltip title="Reasoning">
-              <span>Reasoning</span>
+               <span >Reasoning</span>
             </Tooltip>
           ),
           path: '/topic/reasoning', 
@@ -66,7 +66,7 @@ import {
       icon: <TiSortAlphabeticallyOutline style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="Verbal">
-          <span>Verbal</span>
+           <span >Verbal</span>
         </Tooltip>
       ),
       path: '/topic/verbal', 
@@ -76,7 +76,7 @@ import {
       icon: <MdSupportAgent style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="Interview">
-          <span>Interview</span>
+           <span >Interview</span>
         </Tooltip>
       ),
       path: '/topic/interview', 
@@ -86,7 +86,7 @@ import {
       icon: <FaChartBar style={{ fontSize: '20px' }} />,
       label: (
         <Tooltip title="Stats">
-          <span>Stats</span>
+           <span >Stats</span>
         </Tooltip>
       ),
       path: '/topic/stats', 

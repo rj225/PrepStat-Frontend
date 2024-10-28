@@ -7,7 +7,7 @@
 
 .ant-menu-item-selected, .ant-menu-item-selected:hover ,.ant-menu-submenu-active, .ant-menu-submenu-selected{
     background-color: #f3e1c9ee !important; /* Orange background for active item */
-    color: #ff6f00 !important; /* Dark text color */
+    color: #ff6f00 !important; 
   }
 
   .active-dropdown-button,.ant-dropdown-trigger,.ant-dropdown-open {
