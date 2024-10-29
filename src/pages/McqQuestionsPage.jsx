@@ -8,11 +8,14 @@ import { FaFileLines } from "react-icons/fa6";
 import Footer from "../components/Footer";
 import FirstCapital from '../utils/FirstCapital'
 import VerticalAd from '../components/VerticalAd'
+import InterviewQuestionPage from './InterviewQuestionPage'
 
 function QuestionsPage() {
   
     const location = useLocation(); 
     const x = location.pathname.split('/').filter(word => word != 'topic' && word != '')
+    // console.log(x);
+    
     
 
 
@@ -29,7 +32,7 @@ function QuestionsPage() {
           </div>
 
           <div className="bg-white bg-opacity-25 p-4 mb-4 md:p-6 rounded-lg shadow-2xl">
-            <MCQuestion topic = {x} />
+            {x[0] !== 'interview' ?  <MCQuestion topic = {x} /> : <InterviewQuestionPage topic = {x}/>}
           </div>
           <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-40 flex items-center justify-center p-4 w-full">
             For AD

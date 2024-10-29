@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import 'animate.css';
 import AboutPage from './pages/AboutPage';
 import Loader from './utils/Loader';
+import InterviewQuestionPage from './pages/InterviewQuestionPage';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainContent />} />
         <Route path='/topic/:topic' element={<Topics />} />
+        {/* <Route path='/topic/interview/:question' element={<InterviewQuestionPage/>} /> */}
         <Route path='/topic/:questions/:question' element={<McqQuestionsPage/>} />
         <Route path='/about' element={<AboutPage/>} />
         <Route path='/load' element={<Loader/>}/>
