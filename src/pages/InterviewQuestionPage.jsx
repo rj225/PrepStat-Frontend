@@ -16,7 +16,7 @@ export default function InterviewQuestionPage() {
     const [loading , setLoading] = useState(true);  
     const [currentPage, setCurrentPage] = useState(1);
     const [questions , setQuestions] = useState([]);
-    const [expandedQuestion, setExpandedQuestion] = useState(null);
+    const [expandedQuestion, setExpandedQuestion] = useState([]);
 
     // const topics = topic.topic;
     // console.log(topics);
@@ -26,16 +26,20 @@ export default function InterviewQuestionPage() {
     const apiUrl = import.meta.env.VITE_API_URL;
 
     const handleToggleDetails = (questionId) => {
-        if (expandedQuestion === questionId) {
-          setAnimationClass('animate__animated animate__fadeOut');
-          setTimeout(() => {
-            setExpandedQuestion(null);
-            setAnimationClass('');
-          }, 300); 
-        } else {
-          setExpandedQuestion(questionId);
-          setAnimationClass('animate__animated animate__fadeIn');
-        }
+
+      if (expandedQuestion.includes(questionId)) {
+        setAnimationClass('animate__animated animate__fadeOut');
+        setTimeout(() => {
+          setExpandedQuestion(expandedQuestion.filter((ques) => ques !== questionId));
+          setAnimationClass('');
+        }, 200); 
+      }
+      else{
+        setAnimationClass('animate__animated animate__fadeIn');
+        setExpandedQuestion([...expandedQuestion , questionId]);
+      }
+      console.log(expandedQuestion , 'Expanded Question');
+        
       };
 
     useEffect(() => {
@@ -43,7 +47,7 @@ export default function InterviewQuestionPage() {
         const fetchData = async () => {
           try {
             const getQuestion = await axios.get(`${apiUrl}/interview/${topic[1]}`);
-            console.log(getQuestion.data);
+            // console.log(getQuestion.data);
             setQuestions(getQuestion.data);
           } catch (error) {
               console.log(error);
@@ -88,7 +92,7 @@ export default function InterviewQuestionPage() {
                   className="p-2 shadow shadow-orange-700 bg-gradient-to-tl hover:bg-gradient-to-tr from-orange-200 via-orange-100 to-orange-50 text-gray-700 rounded-lg hover:bg-[#E65100] transition-all duration-300"
                   onClick={() => handleToggleDetails(item.id)}
                 >
-                  {expandedQuestion === item.id ? (
+                  {expandedQuestion.includes(item.id) ? (
                     <span className="flex items-center gap-x-2">
                       <FaEyeSlash /> Hide Detailed Answer
                     </span>
@@ -98,7 +102,7 @@ export default function InterviewQuestionPage() {
                     </span>
                   )}
                 </button>
-                {expandedQuestion === item.id && (
+                {expandedQuestion.includes(item.id) && (
                   <div
                     className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
                   >
