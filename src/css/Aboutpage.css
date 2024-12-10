@@ -1,0 +1,33 @@
+/* .placement_section_img {
+    background: linear-gradient(rgba(0, 110, 101, 0.534), rgba(0, 0, 0, 0.63)),
+      url("./aboutus.jpg") center center;
+    background-size: cover;
+  } */
+.placement_section_img:before {
+    content: "";
+    background: linear-gradient(#72f4f997, rgba(245, 184, 17, 0.667),#72f4f997),
+      url("./aboutus.jpg") center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .community_section_img:before {
+    content: "";
+    background: linear-gradient(#c3f8eadd,#f9e588c4),
+      url("./8.jpg") center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+  }  

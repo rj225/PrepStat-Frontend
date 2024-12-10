@@ -125,10 +125,10 @@ function MCQuestion(topic) {
   }
 
   return (
-    <div className="px-4 py-2">
+    <div className="md:px-4 py-1">
       {Array.isArray(currentQuestions) && currentQuestions.map(item => (
         <div key={item.id}>
-          <h2 className="text-xl font-sans mt-10 mb-5">{FirstCapital(item.question)}</h2>
+          <h2 className="md:text-xl text-lg font-sans mt-10 mb-5">{FirstCapital(item.question)}</h2>
           <ul className="space-y-3 mb-10">
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center  cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_d ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -139,7 +139,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{FirstCapital(item.option_d)}</span>
+                <span className=' font-sans md:text-base text-sm'>{FirstCapital(item.option_d)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_b ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -150,7 +150,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{FirstCapital(item.option_b)}</span>
+                <span className=' font-sans md:text-base text-sm'>{FirstCapital(item.option_b)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_c ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -161,7 +161,7 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{FirstCapital(item.option_c)}</span>
+                <span className=' font-sans md:text-base text-sm'>{FirstCapital(item.option_c)}</span>
               </li>
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_a ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}
@@ -172,12 +172,12 @@ function MCQuestion(topic) {
                     {isCorrect ? <FaCheckCircle className="text-green-500" /> : <FaTimesCircle className="text-red-500" />}
                   </span>
                 )}
-                <span className=' font-sans'>{FirstCapital(item.option_a)}</span>
+                <span className=' font-sans md:text-base text-sm'>{FirstCapital(item.option_a)}</span>
               </li>
           </ul>
 
           {/* Detailed Answer Section */}
-          <div className="mb-10">
+          <div className="mb-10 text-center md:text-left">
             <button
               className="p-2 shadow shadow-orange-700 bg-gradient-to-tl hover:bg-gradient-to-tr from-orange-200 via-orange-100 to-orange-50 text-gray-700 rounded-lg hover:bg-[#E65100] transition-all duration-300"
               onClick={() => handleToggleDetails(item.id)}
@@ -196,7 +196,7 @@ function MCQuestion(topic) {
               <div
                 className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
               >
-                <p className=' font-sans'>{<DetailedAnswer item={item}/>}</p>
+                <p className=' font-sans text-left md:text-base text-sm'>{<DetailedAnswer item={item}/>}</p>
               </div>
             )}
           </div>
@@ -206,17 +206,17 @@ function MCQuestion(topic) {
       ))}
 
       {/* Pagination controls */}
-      <div className="flex justify-between mt-8">
+      <div className="flex md:justify-between justify-evenly items-center mb-4 md:mb-0 mt-8">
         <button
-          className={`p-2 bg-back shadow-md shadow-orange-700 flex items-center gap-x-2 text-white rounded-lg ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#f1c578]'}`}
+          className={`p-2 bg-back shadow-md shadow-orange-700 flex text-sm md:scale-100 items-center gap-x-2 text-white rounded-lg ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#f1c578]'}`}
           onClick={handleClickPrev}
           disabled={currentPage === 1}
         >
           <FaArrowAltCircleLeft/> Previous
         </button>
-        <span className="text-lg">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="md:text-lg text-base">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
-          className={`p-2 bg-back shadow-md shadow-orange-700 flex items-center gap-x-2 text-white rounded-lg ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#f1c578]'}`}
+          className={`p-2 bg-back shadow-md shadow-orange-700 flex text-sm md:scale-100 items-center gap-x-2 text-white rounded-lg ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#f1c578]'}`}
           onClick={handleClickNext}
           disabled={currentPage === totalPages}
         >

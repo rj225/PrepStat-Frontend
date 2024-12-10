@@ -5,8 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.ant-menu-item-selected, .ant-menu-item-selected:hover ,.ant-menu-submenu-active, .ant-menu-submenu-selected{
-    background-color: #f3e1c9ee !important; /* Orange background for active item */
+.ant-menu-item-selected, .ant-menu-item-selected:hover ,.ant-menu-submenu-active, .ant-menu-submenu-selected, .ant{
+    background-color: #f3e1c9ee !important; 
     color: #ff6f00 !important; 
   }
 
@@ -16,3 +16,13 @@
   .ant-btn{
     background-color: #ff7b00 !important;
   }
+  .ant-menu-light {
+    border-inline-end: none !important;
+  }
+ 
+  :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title,
+  :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-light > .ant-menu .ant-menu-submenu-selected > .ant-menu-submenu-title {
+      color: #ff6f00 !important; 
+  }
+    
+  

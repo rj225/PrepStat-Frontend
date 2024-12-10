@@ -3,6 +3,7 @@ import { Layout, Dropdown, Menu, Button } from "antd";
 import { IoIosMail } from "react-icons/io";
 import { FaQuestionCircle, FaSearch, FaBars,FaTimes } from "react-icons/fa";
 import PrepStat from "../utils/PrepStat";
+import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -90,19 +91,23 @@ const Navbar = () => {
           <PrepStat />
         </div>
         <div className="flex items-center space-x-4">
-          <input
+          {/* <input
             type="text"
             placeholder="Search..."
             className="p-2 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:border-transparent border rounded-xl"
-          />
+          /> */}
+          <Link to="/contact">
           <button className="flex items-center space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <IoIosMail style={{ fontSize: "25px" }} className="text-lg" />
             <span>Contact Me</span>
           </button>
+          </Link>
+          <Link to="/#faq">
           <button className="flex items-center  space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <FaQuestionCircle className="text-lg" />
             <span>FAQ</span>
           </button>
+          </Link>
         </div>
       </Header>
     </>

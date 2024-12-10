@@ -81,16 +81,16 @@ import {
       ),
       path: '/topic/interview', 
     },
-    {
-      key: '8',
-      icon: <FaChartBar style={{ fontSize: '20px' }} />,
-      label: (
-        <Tooltip title="Stats">
-           <span >Stats</span>
-        </Tooltip>
-      ),
-      path: '/topic/stats', 
-    },
+    // {
+    //   key: '8',
+    //   icon: <FaChartBar style={{ fontSize: '20px' }} />,
+    //   label: (
+    //     <Tooltip title="Stats">
+    //        <span >Stats</span>
+    //     </Tooltip>
+    //   ),
+    //   path: '/topic/stats', 
+    // },
   ];
   
 

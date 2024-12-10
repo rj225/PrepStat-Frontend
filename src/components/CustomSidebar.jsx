@@ -51,14 +51,14 @@ const CustomSidebar = () => {
     <Sider
     width={230}
       style={{ backgroundColor: "#f8f3ed"}}
-      className="bg-[#f9e6c1]"
+      className=""
       breakpoint="md"
       collapsedWidth="50"
     >
       <Menu
         selectedKeys={[selectedKey]}  
         mode="inline"
-        className="text-base font-semibold pl-2 pr-1 space-y-2 font-serif "
+        className="text-base font-semibold w-full px-1 space-y-2 font-serif "
         style={{ backgroundColor: "#f8f3ed" }}
         items={items}
         onClick={handleMenuClick}

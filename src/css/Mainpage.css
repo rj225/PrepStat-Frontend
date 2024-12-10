@@ -1,5 +1,35 @@
-.login_img_section {
-    background: linear-gradient(rgba(1, 1, 1, 0.534),rgba(0, 0, 0, 0.63)),url("./main.jpg") center center;
-    background-size: cover;
-  }
-  
+.hero_section_img {
+  background: linear-gradient(rgba(0, 110, 101, 0.534), rgba(0, 0, 0, 0.63)),
+    url("./main.jpg") center center;
+  background-size: cover;
+}
+
+#preprationtable_section_img::before {
+  content: "";
+  background: linear-gradient(#ffd6a3cc, rgba(250, 190, 126, 0.772)),
+    url("./bgnew3.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+#faq_section_img::before {
+  content: "";
+  background: linear-gradient(#fcdab0cc, rgba(185, 141, 93, 0.772)),
+    url("./faq.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+}

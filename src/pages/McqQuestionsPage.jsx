@@ -22,23 +22,27 @@ function QuestionsPage() {
   return (
     <div className=" h-full font-serif">
       <Navbar />
-      <div className="bg-gradient-to-t h h-full from-[#f8f3ed] from-20% via-[#f6eee2] to-[#f6ebdd] flex flex-col md:flex-row">
-        <CustomSidebar className="w-full md:w-1/4 lg:w-1/5" />
-        <div className="p-4 w-7/12 h-full md:p-6 space-y-7 flex-1">
-          <h2 className=" text-3xl flex items-center space-x-3 gap-3 font-semibold">{FirstCapital(x[1])} Questions <FaFileLines className=" text-yellow-500"/></h2>
+      <div className="bg-gradient-to-t h h-full from-[#f8f3ed] from-20% via-[#f6eee2] to-[#f6ebdd] flex">
+        <CustomSidebar />
+        <div className='flex flex-col w-full md:flex-row'>
+        <div className="p-4 md:w-10/12 w-full h-full md:p-6 space-y-7 overflow-hidden md:flex-1 flex flex-col">
+          <h2 className="md:text-3xl text-xl flex items-center space-x-3 gap-3 font-semibold"><FaFileLines className=" text-orange-400"/>{FirstCapital(x[1])} Questions </h2>
 
           <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-60 flex items-center justify-center p-4 w-full">
             For AD
           </div>
 
-          <div className="bg-white bg-opacity-25 p-4 mb-4 md:p-6 rounded-lg shadow-2xl">
+          <div className="bg-white bg-opacity-25 py-0 px-3 mb-4 md:p-6 rounded-lg shadow-2xl">
             {x[0] !== 'interview' ?  <MCQuestion topic = {x} /> : <InterviewQuestionPage topic = {x}/>}
           </div>
-          <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-40 flex items-center justify-center p-4 w-full">
+          <div className="bg-white hidden bg-opacity-25 rounded-lg shadow-2xl h-40 md:flex items-center justify-center p-4 w-full">
             For AD
           </div>
         </div>
+        <div className='md:w-3/12 w-full'>
         <VerticalAd/>
+        </div>
+        </div>
       </div>
       <Footer/>
     </div>

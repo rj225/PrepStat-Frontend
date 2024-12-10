@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import CustomSidebar from "../components/CustomSidebar";
 import Navbar from "../components/Navbar";
@@ -15,31 +15,29 @@ function Topics() {
 
 
   return (
-    <div className=" h-full font-serif">
+    <div className="h-full font-serif">
       <Navbar />
-      <div className="bg-gradient-to-t h h-full from-[#f8f3ed] from-20% via-[#f6eee2] to-[#f6ebdd] flex flex-col md:flex-row">
-        <CustomSidebar className="w-full md:w-1/4 lg:w-1/5" />
-        <div className="p-4 w-7/12 h-full md:p-6 space-y-7 flex-1">
-          <h2 className=" text-3xl flex items-center space-x-3 gap-3 font-semibold">{FirstCapital(topic)} Topics <FaFolderMinus className=" text-yellow-500"/></h2>
+      <div className="bg-gradient-to-t h h-full from-[#f8f3ed] from-20% via-[#f6eee2] to-[#f6ebdd] flex">
+        <CustomSidebar />
+        <div className="flex flex-col w-full md:flex-row">
+        <div className="p-4 md:w-9/12 w-full h-full md:p-6 space-y-7 overflow-hidden md:flex-1 flex flex-col">
+          <h2 className="md:text-3xl text-xl flex items-center space-x-3 gap-3 font-semibold"><FaFolderMinus className="text-amber-400"/> {FirstCapital(topic)} Topics </h2>
 
           <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-60 flex items-center justify-center p-4 w-full">
             For AD
           </div>
 
           <div className="bg-white bg-opacity-25 p-4 mb-4 md:p-6 rounded-lg shadow-2xl">
-            <input
-              type="Search"
-              placeholder="Search.."
-              className=" rounded-xl w-full"
-            />
             <Folder topic = {topic}/>
           </div>
-          <div className="bg-white bg-opacity-25 rounded-lg shadow-2xl h-40 flex items-center justify-center p-4 w-full">
+          <div className="bg-white hidden bg-opacity-25 rounded-lg shadow-2xl h-40 md:flex items-center justify-center p-4 w-full">
             For AD
           </div>
         </div>
-
-        <VerticalAd/>
+        <div className="md:w-3/12 w-full">
+          <VerticalAd/>
+        </div>
+        </div>
       </div>
       <Footer/>
     </div>
