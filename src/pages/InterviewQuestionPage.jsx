@@ -108,7 +108,7 @@ export default function InterviewQuestionPage() {
               </button>
               {expandedQuestion.includes(item.id) && (
                 <div
-                  className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
+                  className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-auto`}
                 >
                   <div className=" font-sans text-left">
                     {<DetailedAnswer item={item} />}

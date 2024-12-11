@@ -50,7 +50,13 @@ const CustomSidebar = () => {
   return (
     <Sider
     width={230}
-      style={{ backgroundColor: "#f8f3ed"}}
+    style={{
+      backgroundColor: "#f8f3ed",
+      position: "sticky", // Sticky positioning
+      top: "60px", // Adjust top to match the navbar's height
+      height: "calc(100vh - 60px)", // Adjust height to account for the top offset
+      overflow: "auto", // Ensures it scrolls if the content is longer than the height
+    }}
       className=""
       breakpoint="md"
       collapsedWidth="50"

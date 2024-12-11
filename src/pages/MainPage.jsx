@@ -108,7 +108,7 @@ const MainContent = () => {
       <Navbar />
       <div className="flex max-w-screen flex-row">
         <CustomSidebar />
-        <div className="flex-1 w-8/12 md:w-full h-auto md:h-screen">
+        <div className="flex-1 w-8/12 overflow-hidden md:w-full h-auto md:h-screen">
           {/* Hero Section */}
           <section className="flex flex-col overflow-hidden font-serif hero_section_img items-center justify-center relative md:h-5/6 py-16">
             <div className=" md:bg-gradient-to-r bg-gradient-to-t from-gray-800 from-45% via-orange-700 via-85% to-orange-200 opacity-50 absolute inset-0 z-0"></div>

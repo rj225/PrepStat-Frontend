@@ -63,7 +63,7 @@ const Navbar = ({showContact = true}) => {
   return (
     <>
       {/* mobile view */}
-      <Header className="bg-[#f8f3ed] text-[#4E342E] sm:hidden flex overflow-hidden justify-between items-center p-4 relative">
+      <Header className="sticky top-0 z-50 bg-[#f8f3ed] text-[#4E342E] sm:hidden flex overflow-hidden justify-between items-center p-4">
       <div className="font-bold text-2xl">
         <PrepStat />
       </div>
@@ -103,7 +103,8 @@ const Navbar = ({showContact = true}) => {
 
 
       {/*pc, tab view */}
-      <Header className="bg-[#f8f3ed] text-[#4E342E] hidden sm:flex justify-between items-center px-4">
+      <Header className="sticky top-0 z-50 bg-[#f8f3ed] text-[#4E342E] hidden sm:flex justify-between items-center px-4">
+
         <div className="font-bold text-3xl">
           <PrepStat />
         </div>
