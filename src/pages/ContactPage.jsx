@@ -22,11 +22,11 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen font-serif">
-      <Navbar />
+      <Navbar showContact={false} />
       <div className="bg-gradient-to-l from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4]">
         <section className="py-16 bg-gradient-to-r from-orange-50 to-orange-100">
           <div className="max-w-7xl mx-auto px-4">
-            {/* Header Section */}
+            {/* Hero Section */}
             <div className="text-center mb-12" data-aos="fade-down">
               <h2 className="text-4xl font-bold text-orange-600">
                 Get in Touch{" "}
@@ -55,7 +55,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/rishabh-raj-875327282"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 mt-4 inline-block hover:underline"
+                  className="text-orange-900 mt-4 inline-block hover:underline"
                 >
                   Visit LinkedIn Profile
                 </a>
@@ -69,7 +69,14 @@ export default function Contact() {
                     Email Us
                   </h3>
                 </div>
-                <p className="text-gray-600 mt-2">wtc131123@gmail.com</p>
+                <p className="text-gray-600 mt-2">
+                  <a
+                    href="mailto:wtc131123@gmail.com"
+                    className="text-orange-900 hover:underline"
+                  >
+                    wtc131123@gmail.com
+                  </a>
+                </p>
               </div>
 
               {/* Address */}
@@ -80,7 +87,15 @@ export default function Contact() {
                     Visit Us
                   </h3>
                 </div>
-                <p className="text-gray-600 mt-2">Iter,Bhubaneswar</p>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Iter,Bhubaneswar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="text-orange-900 mt-2 cursor-pointer hover:underline">
+                    Iter, Bhubaneswar
+                  </p>
+                </a>
               </div>
             </div>
 
@@ -103,37 +118,43 @@ export default function Contact() {
                 data-aos="fade-up"
               >
                 <span
-                  className="text-orange-600 absolute right-2 top-2 hover:scale-105 duration-500 cursor-pointer border-2 p-2 bg-orange-200 rounded-full"
+                  className="text-orange-600 absolute md:right-2 right-1 top-0 md:top-2 scale-75 md:scale-100 hover:scale-95 md:hover:scale-105 duration-500 cursor-pointer border-2 p-2 bg-orange-200 rounded-full"
                   onClick={() => setFormVisible(false)}
                 >
                   <GiCrossedBones />
                 </span>
-                <h3 className="text-2xl font-bold text-orange-600 mb-6 text-center">
+                <h3 className="md:text-2xl text-xl font-bold text-orange-600 mb-6 text-center">
                   Send Us a Message
                 </h3>
                 <form className="space-y-6">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-gray-600 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block md:text-lg text-base text-gray-600 mb-2"
+                    >
                       Name
                     </label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your name"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-gray-600 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block md:text-lg text-base text-gray-600 mb-2"
+                    >
                       Email
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -142,14 +163,14 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-gray-600 mb-2"
+                      className="block md:text-lg text-base text-gray-600 mb-2"
                     >
                       Message
                     </label>
                     <textarea
                       id="message"
                       rows="5"
-                      className="w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your message"
                     ></textarea>
                   </div>
@@ -158,7 +179,7 @@ export default function Contact() {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="px-6 py-3 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600 transition-transform hover:scale-105"
+                      className="md:px-6 md:py-3 px-3 py-1 bg-orange-500 text-white rounded-lg shadow-md hover:shadow-lg hover:bg-orange-600 transition-transform duration-500 hover:scale-105"
                     >
                       Send Message
                     </button>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
-const Navbar = () => {
+const Navbar = ({showContact = true}) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const searchRef = useRef(null);
 
@@ -29,19 +29,36 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    {
+    showContact && {
       key: "1",
-      icon: <IoIosMail />,
+      icon: <IoIosMail className="text-xl hover:text-orange-500"/>,
       label: "Contact Me",
+      link: "/contact", // Add route link to be used later
     },
     {
       key: "2",
-      icon: <FaQuestionCircle />,
+      icon: <FaQuestionCircle className="text-lg hover:text-orange-500"/>,
       label: "FAQ",
+      link: "/#faq", // Route for FAQ
     },
-  ];
+  ].filter(Boolean);
+  
 
-  const menu = <Menu items={menuItems} />;
+  const menu = (
+    <Menu>
+      {menuItems.map((item) => (
+        <Menu.Item key={item.key}>
+          <Link to={item.link}>
+            <div className="flex items-center space-x-2">
+              {item.icon}
+              <span>{item.label}</span>
+            </div>
+          </Link>
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
+  
 
   return (
     <>
@@ -96,12 +113,14 @@ const Navbar = () => {
             placeholder="Search..."
             className="p-2 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:border-transparent border rounded-xl"
           /> */}
-          <Link to="/contact">
-          <button className="flex items-center space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
-            <IoIosMail style={{ fontSize: "25px" }} className="text-lg" />
-            <span>Contact Me</span>
-          </button>
-          </Link>
+          {showContact && (
+            <Link to="/contact">
+              <button className="flex items-center space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
+                <IoIosMail style={{ fontSize: "25px" }} className="text-lg" />
+                <span>Contact Me</span>
+              </button>
+            </Link>
+          )}
           <Link to="/#faq">
           <button className="flex items-center  space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <FaQuestionCircle className="text-lg" />

@@ -167,6 +167,8 @@ const AboutPage = () => {
                   {
                     name: "Rishabh Raj",
                     image: RishabhImage,
+                    about:
+                      "MERN stack developer creating responsive designs and managing databases efficiently.",
                     contribution:
                       "Led frontend, integrated APIs, ensured seamless functionality.",
                     Linkedin:
@@ -176,6 +178,8 @@ const AboutPage = () => {
                   {
                     name: "Piyush Kumar Singh",
                     image: PiyushImage,
+                    about:
+                      "MERN stack developer skilled in Java and experienced in smooth database management.",
                     contribution:
                       "Connected backend APIs and managed database operations.",
                     Linkedin:
@@ -185,6 +189,8 @@ const AboutPage = () => {
                   {
                     name: "Aditya Raj Purohit",
                     image: AdityaImage,
+                    about:
+                      "Java Spring expert with JSX skills, delivering robust systems and managing databases.",
                     contribution:
                       "Managed deployment and cloud infrastructure.",
                     Linkedin:
@@ -209,8 +215,7 @@ const AboutPage = () => {
                       {member.name}
                     </h3>
                     <p className="text-gray-600 mt-2 md:text-left text-center">
-                      Full-stack developer with expertise in building responsive
-                      and dynamic web applications.
+                      {member.about}
                     </p>
                     {/* Contribution Section */}
                     <p className="text-gray-700 italic mt-4 text-left">
@@ -262,7 +267,7 @@ const AboutPage = () => {
                 Whether it's clearing doubts, sharing resources, or just seeking
                 motivation—we've got you covered.
               </p>
-              <a href="https://chat.whatsapp.com/FjdhY98IwT95IVwbEgW1td">
+              <a href="https://chat.whatsapp.com/FjdhY98IwT95IVwbEgW1td" target="blank">
                 <button className="bg-gradient-to-tl font-serif from-orange-400 from-15% to-orange-700 cursor-pointer text-orange-100 md:px-6 px-3 md:py-3 py-2 rounded-full font-semibold hover:bg-gradient-to-bl hover:scale-105 shadow-md hover:ring-1 hover:ring-amber-300 shadow-orange-900 duration-500 transition">
                   Be a Part of the Community
                 </button>
