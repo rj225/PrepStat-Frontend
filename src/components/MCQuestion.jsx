@@ -43,8 +43,6 @@ function MCQuestion(topic) {
   }, []);
 
 
-
-  // const questions = [
   //   {
   //     id: 1,
   //     question: "What is the largest planet in our solar system?",
@@ -126,9 +124,12 @@ function MCQuestion(topic) {
 
   return (
     <div className="md:px-4 py-1">
-      {Array.isArray(currentQuestions) && currentQuestions.map(item => (
+      {Array.isArray(currentQuestions) && currentQuestions.map((item,index) => (
         <div key={item.id}>
-          <h2 className="md:text-xl text-lg font-sans mt-10 mb-5">{FirstCapital(item.question)}</h2>
+          <div className='flex items-start gap-x-3 mt-10 mb-5'>
+          <h2 className='md:text-xl text-lg font-sans'>Q{(currentPage - 1) * questionsPerPage + index + 1}.</h2>
+          <h2 className="md:text-xl text-lg font-sans">{FirstCapital(item.question)}</h2>
+          </div>
           <ul className="space-y-3 mb-10">
               <li
                 className={`p-2 border rounded-lg flex animate__animated items-center  cursor-pointer ${selectedQuestion === item.id && selectedOption === item.option_d ? (isCorrect ? 'bg-green-100 animate__flash' : 'bg-red-100  animate__headShake') : 'bg-white'}`}

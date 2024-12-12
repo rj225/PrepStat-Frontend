@@ -17,7 +17,7 @@ const MainContent = () => {
     {
       key: "1",
       label: (
-        <span className="font-serif text-lg font-normal">
+        <span className="font-serif text-base md:text-lg font-normal">
           What is PrepStat?
         </span>
       ),
@@ -32,7 +32,7 @@ const MainContent = () => {
     {
       key: "2",
       label: (
-        <span className="font-serif text-lg font-normal">
+        <span className="font-serif text-base md:text-lg font-normal">
           How does PrepStat help with placements?
         </span>
       ),
@@ -48,7 +48,7 @@ const MainContent = () => {
     {
       key: "3",
       label: (
-        <span className="font-serif text-lg font-normal">
+        <span className="font-serif text-base md:text-lg font-normal">
           Is PrepStat free to use?
         </span>
       ),
@@ -63,7 +63,7 @@ const MainContent = () => {
     {
       key: "4",
       label: (
-        <span className="font-serif text-lg font-normal">
+        <span className="font-serif text-base md:text-lg font-normal">
           What makes PrepStat unique?
         </span>
       ),
@@ -79,7 +79,7 @@ const MainContent = () => {
     {
       key: "5",
       label: (
-        <span className="font-serif text-lg font-normal">
+        <span className="font-serif text-base md:text-lg font-normal">
           What kind of questions are available on PrepStat?
         </span>
       ),
@@ -106,11 +106,11 @@ const MainContent = () => {
   return (
     <div className="min-h-screen font-serif">
       <Navbar />
-      <div className="flex max-w-screen flex-row">
+      <div className="flex max-w-screen min-h-screen flex-row">
         <CustomSidebar />
-        <div className="flex-1 w-8/12 overflow-hidden md:w-full h-auto md:h-screen">
+        <div className="flex-1 w-8/12 overflow-hidden md:overflow-visible md:w-full h-full">
           {/* Hero Section */}
-          <section className="flex flex-col overflow-hidden font-serif hero_section_img items-center justify-center relative md:h-5/6 py-16">
+          <section className="flex flex-col overflow-hidden font-serif hero_section_img items-center justify-center relative md:h-[90vh] py-16">
             <div className=" md:bg-gradient-to-r bg-gradient-to-t from-gray-800 from-45% via-orange-700 via-85% to-orange-200 opacity-50 absolute inset-0 z-0"></div>
             <div className="text-center p-8 z-10" data-aos="zoom-in">
               <h1 className="md:text-5xl text-3xl font-bold text-gray-200 mb-6 flex flex-wrap items-center justify-center gap-2">
@@ -258,7 +258,7 @@ const MainContent = () => {
           {/* FAQ Section */}
           <section id="faq_section_img" className="relative px-4 py-16">
             <div id="faq" className="container mx-auto" data-aos="zoom-in">
-              <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+              <h2 className="md:text-3xl text-2xl font-bold text-center text-gray-800 mb-8">
                 FAQs
               </h2>
               <div className="max-w-2xl bg-white rounded-lg shadow-2xl mx-auto">
@@ -266,10 +266,9 @@ const MainContent = () => {
               </div>
             </div>
           </section>
-
-          <Footer/>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
