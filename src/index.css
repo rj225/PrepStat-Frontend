@@ -21,7 +21,9 @@
   }
  
   :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title,
-  :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-light > .ant-menu .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-light > .ant-menu .ant-menu-submenu-selected > .ant-menu-submenu-title,
+  :where(.css-1gwfwyx).ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title,
+  :where(.css-1gwfwyx).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
       color: #ff6f00 !important; 
   }
     
