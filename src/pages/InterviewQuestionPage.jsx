@@ -84,11 +84,16 @@ export default function InterviewQuestionPage() {
   return (
     <div className="md:px-4 py-1">
       {Array.isArray(currentQuestions) &&
-        currentQuestions.map((item) => (
+        currentQuestions.map((item ,index) => (
           <div key={item.id}>
-            <h2 className="md:text-xl text-lg font-sans mt-10 mb-5">
-              {FirstCapital(item.question)}
-            </h2>
+            <div className="flex items-start gap-x-3 mt-10 mb-5">
+              <h2 className="md:text-xl text-lg font-sans">
+                Q{(currentPage - 1) * questionsPerPage + index + 1}.
+              </h2>
+              <h2 className="md:text-xl text-lg font-sans">
+                {FirstCapital(item.question)}
+              </h2>
+            </div>
 
             {/* Detailed Answer Section */}
             <div className="mb-10 text-center md:text-left">
