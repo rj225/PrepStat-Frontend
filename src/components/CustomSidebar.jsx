@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout, Menu } from "antd";
 import items from "./Items";
 import { useNavigate, useLocation } from "react-router-dom";
+import "../index.css";
 
 const { Sider } = Layout;
 
