@@ -18,7 +18,7 @@ function MCQuestion(topic) {
   const [animationClass, setAnimationClass] = useState('');
   const [loading , setLoading] = useState(true);
 
-  const questionsPerPage = 10;
+  const questionsPerPage = 5;
 
   const apiUrl = import.meta.env.VITE_API_URL;
   const topics = topic.topic;
@@ -215,7 +215,7 @@ function MCQuestion(topic) {
         >
           <FaArrowAltCircleLeft/> Previous
         </button>
-        <span className="md:text-lg text-base">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="md:text-lg text-base font-sans">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
           className={`p-2 bg-back shadow-md shadow-orange-700 flex text-sm md:scale-100 items-center gap-x-2 text-white rounded-lg ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#f1c578]'}`}
           onClick={handleClickNext}

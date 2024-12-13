@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomSidebar from "../components/CustomSidebar";
@@ -15,6 +15,11 @@ import heroimg from "../css/aboutpage_herosection.png";
 import { Link } from "react-router-dom";
 
 const AboutPage = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  })
+
   return (
     <div className="text-gray-800 font-serif min-h-screen">
       <Navbar />

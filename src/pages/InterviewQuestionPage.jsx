@@ -145,7 +145,7 @@ export default function InterviewQuestionPage() {
         >
           <FaArrowAltCircleLeft /> Previous
         </button>
-        <span className="md:text-lg text-base">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="md:text-lg text-base font-sans">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
           className={`p-2 bg-back shadow-md shadow-orange-700 flex text-sm md:scale-100 items-center gap-x-2 text-white rounded-lg ${
             currentPage === totalPages
