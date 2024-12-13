@@ -23,8 +23,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen font-serif">
       <Navbar showContact={false} />
-      <div className="bg-gradient-to-l from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4]">
-        <section className="py-16 bg-gradient-to-r from-orange-50 to-orange-100">
+      <div className="">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
             {/* Hero Section */}
             <div className="text-center mb-12" data-aos="fade-down">

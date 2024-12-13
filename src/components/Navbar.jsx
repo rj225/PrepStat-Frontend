@@ -40,7 +40,7 @@ const Navbar = ({showContact = true}) => {
       key: "2",
       icon: <IoBugSharp className="text-lg text-orange-50"/>,
       label: "Reort Bug",
-      link: "/#faq", 
+      link: "https://forms.gle/cuL4bDstY9GVBQZy9", 
     },
   ].filter(Boolean);
   
@@ -88,12 +88,12 @@ const Navbar = ({showContact = true}) => {
               </button>
             </Link>
           )}
-          <Link to="/#faq">
+          <a href="https://forms.gle/cuL4bDstY9GVBQZy9" target="blank">
           <button className="flex items-center  space-x-2 bg-back text-font h-10 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 transition-transform duration-500">
             <IoBugSharp className="text-lg" />
             <span>Report Bug</span>
           </button>
-          </Link>
+          </a>
         </div>
       </Header>
     </>
