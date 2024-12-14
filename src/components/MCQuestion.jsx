@@ -195,9 +195,9 @@ function MCQuestion(topic) {
             </button>
             {expandedQuestion === item.id && (
               <div
-                className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-hidden`}
+                className={`mt-4 p-4 border rounded-lg bg-gray-100 ${animationClass} transition-transform duration-500 transform max-h-96 overflow-auto`}
               >
-                <p className=' font-sans text-left md:text-base text-sm'>{<DetailedAnswer item={item}/>}</p>
+                <div className=' font-sans text-left md:text-base text-sm'>{<DetailedAnswer item={item}/>}</div>
               </div>
             )}
           </div>
