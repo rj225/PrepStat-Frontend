@@ -11,6 +11,8 @@ import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import faqItems from "../data/faqItems";
+import Testimonial from "../components/Testimonial";
+import TargetCompanies from "../components/TargetCompanies";
 
 
 const MainContent = () => {
@@ -68,12 +70,13 @@ const MainContent = () => {
           </section>
 
           {/* Feature section */}
-          <section className="container bg-gradient-to-tl from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4] mx-auto py-16">
+          <section id="Feature" className="container bg-gradient-to-tl from-[#f8f3ed] from-20% via-[#f7e8d3] to-[#f8e1c4] mx-auto py-16">
             <h2 className="md:text-3xl text-2xl font-bold text-center text-gray-800 mb-10">
               Unlock Your Potential
             </h2>
             <div className="grid grid-cols-1 bg-transparent md:grid-cols-3 px-4 gap-9 md:gap-12">
-              {Features.map((feature) => (
+              {Features.map((feature , index) => (
+                <Link to={feature.path} key={index}>
                 <div
                   data-aos="fade-up"
                   key={feature.id}
@@ -89,6 +92,7 @@ const MainContent = () => {
                   <h3 className="md:text-xl text-lg font-semibold">{feature.title}</h3>
                   <p className="text-gray-600 text-sm text-center">{feature.description}</p>
                 </div>
+                </Link>
               ))}
             </div>
           </section>
@@ -178,6 +182,21 @@ const MainContent = () => {
               <img src={img} alt="img" className="h-80 md:block hidden border-r-8 border-t-8 border-orange-500 w-auto shadow-lg rounded-2xl" />
             </div>
           </section>
+
+          {/* testimonial */}
+          <section id="testimonial_section_img" className="max-w-screen-xl relative overflow-hidden">
+            <div className="">
+              <Testimonial />
+            </div>
+          </section>
+
+          {/* target companies */}
+            <section className="bg-gradient-to-br from-[#ffffff] via-[#fbbe68] via-55% to-[#fdd8ae] to-70%">
+              <div>
+                <TargetCompanies/>
+              </div>
+            </section>
+
 
           {/* FAQ Section */}
           <section id="faq_section_img" className="relative px-4 py-16">

@@ -33,3 +33,18 @@
   opacity: 0.5;
   z-index: -1;
 }
+
+#testimonial_section_img::before {
+  content: "";
+  background: linear-gradient(#fcb156cc, rgba(241, 139, 31, 0.772)),
+    url("./bg7.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+}

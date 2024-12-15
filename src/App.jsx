@@ -12,6 +12,9 @@ import Contact from "./pages/ContactPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Testimonial from "./components/Testimonial";
+import TargetCompanies from "./components/TargetCompanies";
+import ComingSoon from "./pages/CoomingSoonPage";
 
 const App = () => {
   useEffect(() => {
@@ -29,7 +32,7 @@ const App = () => {
           element={<McqQuestionsPage />}
         />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/load" element={<Loader />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

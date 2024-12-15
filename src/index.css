@@ -26,5 +26,35 @@
   :where(.css-1gwfwyx).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
       color: #ff6f00 !important; 
   }
-    
+  
+  /* Inactive slides */
+.swiper-slide {
+  opacity: 0.8;
+  transition: opacity 0.5s ease !important;
+}
+
+/* Active slide */
+.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000000 !important; 
+  opacity: 1 !important;
+  transition: background-color 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* Change the color of the active dot */
+.swiper-pagination-bullet-active {
+  background-color: #c25100 !important; /* Orange for active dot */
+  opacity: 1 !important;
+}
+
+/* Style the navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f97316 !important; /* Orange color */
+  font-size: 10px !important; /* Adjust size */
+}
+
   

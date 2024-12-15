@@ -11,6 +11,7 @@ const Features = [
       "Sharpen your analytical skills and excel in logical reasoning to ace the toughest challenges.",
     bgColor: "#f8f3ed",
     borderColor: "#E2CAA8", // Matches the light beige tone
+    path: "/topic/aptitude",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const Features = [
       "Enhance your problem-solving abilities and tackle complex scenarios with confidence.",
     bgColor: "#e1f8c4",
     borderColor: "#c6e7a4", // Matches the light green tone
+    path: '/topic/reasoning',
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const Features = [
       "Stay updated with the latest placement trends and use data-driven insights to plan your career.",
     bgColor: "#e8d3f7",
     borderColor: "#d4b5e6", // Matches the light purple tone
+    path: '/comingsoon'
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const Features = [
       "Boost your verbal proficiency with tailored question sets that ensure mastery in communication.",
     bgColor: "#d4f7e1",
     borderColor: "#b5e6cc", // Matches the teal tone
+    path: '/topic/verbal',
   },
   {
     id: 5,
@@ -47,6 +51,7 @@ const Features = [
       "Prepare for interviews with expert guidance, tailored questions, and practical solutions.",
     bgColor: "#f8d3d3",
     borderColor: "#e6b5b5", // Matches the light red tone
+    path: '/topic/interview', 
   },
   {
     id: 6,
@@ -55,7 +60,8 @@ const Features = [
     description:
       "Read testimonials from students and professionals who have achieved success with PrepStat.",
     bgColor: "#f7dcd3",
-    borderColor: "#e6c0b5", // Matches the peach tone
+    borderColor: "#e6c0b5", // Matches the peach 
+    path: '/#testimonial_section_img'
   },
 ];
 

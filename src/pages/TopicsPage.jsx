@@ -13,6 +13,9 @@ function Topics() {
   const { topic } = useParams();
   const location = useLocation(); 
 
+  useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
 
   return (
     <div className="h-full font-serif">

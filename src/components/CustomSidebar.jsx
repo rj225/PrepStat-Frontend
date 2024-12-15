@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Menu } from "antd";
-import items from "./Items";
+import items from "../data/Items";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../index.css";
 
