@@ -10,15 +10,69 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import Navbar from "../components/Navbar";
 import { GiCrossedBones } from "react-icons/gi";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set } from "firebase/database";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC46CgVaLWYuHVOokrGBiySrxi9dJpAWtE",
+  authDomain: "contactform-prepstat.firebaseapp.com",
+  databaseURL: "https://contactform-prepstat-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "contactform-prepstat",
+  storageBucket: "contactform-prepstat.firebasestorage.app",
+  messagingSenderId: "731758171345",
+  appId: "1:731758171345:web:7c04a50669b91952d861f0",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 export default function Contact() {
   const [formVisible, setFormVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  // Initialize AOS animations
   AOS.init({
     duration: 800,
     once: true,
   });
+
+  // Handle form data change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log("Form Data Submitted:", formData);
+  
+    set(ref(db, "messages/" + Date.now()), {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    toast.success("Your message has been submitted successfully!");
+    setFormVisible(false);
+  };
 
   return (
     <div className="min-h-screen font-serif">
@@ -126,7 +180,7 @@ export default function Contact() {
                 <h3 className="md:text-2xl text-xl font-bold text-orange-600 mb-6 text-center">
                   Send Us a Message
                 </h3>
-                <form className="space-y-6">
+                <form className="space-y-6" id="contactForm" onSubmit={handleSubmit}>
                   {/* Name */}
                   <div>
                     <label
@@ -138,6 +192,9 @@ export default function Contact() {
                     <input
                       type="text"
                       id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your name"
                     />
@@ -154,6 +211,9 @@ export default function Contact() {
                     <input
                       type="email"
                       id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your email"
                     />
@@ -169,6 +229,9 @@ export default function Contact() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       rows="5"
                       className="w-full md:px-4 md:py-3 px-2 py-1 border-transparent rounded-lg shadow-lg focus:border-transparent focus:ring-2 focus:ring-orange-400"
                       placeholder="Enter your message"
@@ -190,6 +253,7 @@ export default function Contact() {
           </div>
         </section>
       </div>
+      <ToastContainer />
     </div>
   );
 }

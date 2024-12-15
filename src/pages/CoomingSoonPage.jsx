@@ -62,9 +62,9 @@ export default function ComingSoon() {
       </div>
 
       {/* Animated Floating Circles */}
-      <div className="absolute animate-spin top-1/3 right-1/4 w-16 h-16 bg-gradient-to-tr from-orange-500 via-orange-300 to-orange-100 rounded-full opacity-70"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-12 h-12 bg-amber-500 rounded-full opacity-70 animate-bounce delay-700"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-20 h-20 bg-orange-300 rounded-full opacity-60 animate-pulse"></div>
+      <div className="absolute md:block hidden animate-spin top-1/3 right-1/4 w-16 h-16 bg-gradient-to-tr from-orange-500 via-orange-300 to-orange-100 rounded-full opacity-70"></div>
+      <div className="absolute md:block hidden bottom-1/4 left-1/4 w-12 h-12 bg-amber-500 rounded-full opacity-70 animate-bounce delay-700"></div>
+      <div className="absolute md:block hidden bottom-1/3 right-1/3 w-20 h-20 bg-orange-300 rounded-full opacity-60 animate-pulse"></div>
     </div>
   </div>
   );
