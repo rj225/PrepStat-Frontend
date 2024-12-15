@@ -19,13 +19,13 @@ import { ToastContainer } from "react-toastify";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC46CgVaLWYuHVOokrGBiySrxi9dJpAWtE",
-  authDomain: "contactform-prepstat.firebaseapp.com",
-  databaseURL: "https://contactform-prepstat-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "contactform-prepstat",
-  storageBucket: "contactform-prepstat.firebasestorage.app",
-  messagingSenderId: "731758171345",
-  appId: "1:731758171345:web:7c04a50669b91952d861f0",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
