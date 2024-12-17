@@ -18,9 +18,9 @@ import vision3 from "../css/vision/vision 3.png";
 import { Helmet } from "react-helmet-async";
 
 const AboutPage = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="text-gray-800 font-serif min-h-screen">
