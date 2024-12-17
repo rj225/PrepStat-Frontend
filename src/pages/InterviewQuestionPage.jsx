@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import DetailedAnswer from "../utils/DetailedAnswer";
+import { Helmet } from 'react-helmet-async';
 
 export default function InterviewQuestionPage() {
   // const [Items , setItems] = useState("");
@@ -83,6 +84,12 @@ export default function InterviewQuestionPage() {
 
   return (
     <div className="md:px-4 py-1">
+      <Helmet>
+        <title>{`${FirstCapital(topic[1])}-Interview Questions | PrepStat`}</title>
+        <meta name="description" content={`Practice multiple choice questions on ${topic[1]}. Improve your knowledge with detailed explanations for each question.`} />
+        <meta name="keywords" content="MCQ, multiple choice questions, interactive quiz, practice questions, answers, detailed explanation" />
+        <link rel="canonical" href={location.pathname} />
+      </Helmet>
       {Array.isArray(currentQuestions) &&
         currentQuestions.map((item ,index) => (
           <div key={item.id}>

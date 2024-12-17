@@ -44,6 +44,7 @@ const Folder = ({ topic }) => {
           placeholder="Search topics..."
           className="w-full rounded-xl border-transparent shadow-lg focus:ring-1 focus:ring-orange-500 focus:border-transparent"
           value={searchQuery}
+          aria-label="Search topics"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>

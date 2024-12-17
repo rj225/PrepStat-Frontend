@@ -7,6 +7,7 @@ import { FaTimesCircle } from 'react-icons/fa';
 import axios from 'axios';
 import FirstCapital from '../utils/FirstCapital';
 import DetailedAnswer from '../utils/DetailedAnswer';
+import { Helmet } from 'react-helmet-async';
 
 function MCQuestion(topic) {
   const [questions , setQuestions] = useState([]);
@@ -124,6 +125,13 @@ function MCQuestion(topic) {
 
   return (
     <div className="md:px-4 py-1">
+      <Helmet>
+        <title>{`${FirstCapital(topics[1])}-MCQs | PrepStat`}</title>
+        <meta name="description" content={`Practice multiple choice questions on ${topics[1]}. Improve your knowledge with detailed explanations for each question.`} />
+        <meta name="keywords" content="MCQ, multiple choice questions, interactive quiz, practice questions, answers, detailed explanation" />
+        <link rel="canonical" href={location.pathname} />
+      </Helmet>
+
       {Array.isArray(currentQuestions) && currentQuestions.map((item,index) => (
         <div key={item.id}>
           <div className='flex items-start gap-x-3 mt-10 mb-5'>

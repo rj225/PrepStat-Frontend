@@ -5,9 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .ant-menu-item-selected, .ant-menu-item-selected:hover ,.ant-menu-submenu-active, .ant-menu-submenu-selected, .ant{
     background-color: #f3e1c9ee !important; 
-    color: #ff6f00 !important; 
+    color: #ec5200 !important; 
   }
 
   .active-dropdown-button,.ant-dropdown-trigger,.ant-dropdown-open {

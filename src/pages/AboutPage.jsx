@@ -13,33 +13,52 @@ import RishabhImage from "../css/profile photo/Rishabh.png";
 import AdityaImage from "../css/profile photo/Aditya.jpg";
 import heroimg from "../css/aboutpage_herosection.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AboutPage = () => {
-
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-  })
+  });
 
   return (
     <div className="text-gray-800 font-serif min-h-screen">
+      <Helmet>
+        <link rel="canonical" href="https://www.prepstat.in/about" />
+        <title>About Us - PrepStat | Placement Preparation Platform</title>
+        <meta
+          name="description"
+          content="PrepStat is your partner in conquering placement challenges, offering curated resources for aptitude, reasoning, and interview preparation."
+        />
+        <meta
+          name="keywords"
+          content="PrepStat, placements, interview preparation, quantitative aptitude, reasoning ability, SOA, ITER"
+        />
+      </Helmet> 
       <Navbar />
       <div className="flex md:flex-row">
         <CustomSidebar className="w-full md:w-1/4 lg:w-1/5" />
         <div className="">
           {/* About Us Section */}
-          <section className="flex flex-col md:flex-row md:bg-gradient-to-br bg-gradient-to-bl from-[#f8eada] md:from-40% from-20% via-[#ffb348a5] via-65% to-[#f99c2a3c] to-85% px-4 md:px-10 font-serif items-center justify-center relative h-auto py-16">
+          <section
+            aria-label="About Us"
+            className="flex flex-col md:flex-row md:bg-gradient-to-br bg-gradient-to-bl from-[#f8eada] md:from-40% from-20% via-[#ffb348a5] via-65% to-[#f99c2a3c] to-85% px-4 md:px-10 font-serif items-center justify-center relative h-auto md:py-16 py-8"
+          >
             {/* Content Section */}
-            <div
-              className="w-full md:w-1/2 p-4 md:p-2 mx-auto"
-              data-aos="fade-up"
-            >
-              <h2 className="text-3xl md:text-4xl font-semibold text-orange-950 mb-5 text-center md:text-left">
+            <div className="w-full md:w-1/2 p-2 mx-auto" data-aos="fade-up">
+              {/* Main heading for SEO */}
+              <h1 className="text-2xl md:text-4xl font-semibold text-orange-950 mb-5 text-left md:text-left">
                 PrepStat For You
-              </h2>
-              <p className="text-base md:text-lg font-semibold text-orange-600 italic mb-6 text-center md:text-left">
-                "Your partner in conquering placement challenges."
-              </p>
+              </h1>
 
+              {/* Subheading */}
+              <h2 className="text-sm md:text-lg font-semibold text-orange-600 italic mb-6 text-center md:text-left">
+                "Your partner in conquering placement challenges."
+              </h2>
+
+              {/* Section heading for the description */}
+              <h3 className="text-lg md:text-xl font-bold text-orange-800 mb-3 text-left">
+                About PrepStat
+              </h3>
               <p className="text-sm md:text-lg text-gray-800 leading-relaxed mb-4 text-justify">
                 <span className="text-orange-600 font-semibold">PrepStat</span>,
                 created by three B.Tech students from SOA, ITER, is dedicated to
@@ -47,6 +66,11 @@ const AboutPage = () => {
                 structured guidance, tailored to meet the demands of today’s
                 competitive job market.
               </p>
+
+              {/* Section heading for platform features */}
+              <h3 className="text-lg md:text-xl font-bold text-orange-800 mb-3 text-left">
+                Our Platform Features
+              </h3>
               <p className="text-sm md:text-lg text-gray-800 leading-relaxed text-justify">
                 We offer an all-in-one platform that covers{" "}
                 <span className="text-orange-600">Quantitative Aptitude</span>,{" "}
@@ -60,13 +84,14 @@ const AboutPage = () => {
 
             {/* Image Section */}
             <div
-              className="w-full md:w-1/2 p-4 mt-6 md:mt-0"
+              className="w-full md:w-1/2 p-4 md:pl-12 mt-6 md:mt-0"
               data-aos="fade-up"
             >
               <img
                 src={heroimg}
-                alt="hero_img"
-                className="rounded-3xl border-r-4 border-t-4 shadow-xl border-orange-500 mx-auto w-full md:w-4/5"
+                loading="lazy"
+                alt="Illustration representing the PrepStat platform"
+                className="rounded-3xl border-r-4 border-t-4 shadow-xl border-orange-500 mx-auto w-full"
               />
             </div>
           </section>
@@ -173,7 +198,7 @@ const AboutPage = () => {
                     name: "Rishabh Raj",
                     image: RishabhImage,
                     about:
-                      "MERN stack developer creating responsive designs and managing databases efficiently.",
+                      "MERN stack developer with industry experience, delivering responsive designs and seamless integrations.",
                     contribution:
                       "Led frontend, integrated APIs, ensured seamless functionality.",
                     Linkedin:
@@ -184,7 +209,7 @@ const AboutPage = () => {
                     name: "Piyush Kumar Singh",
                     image: PiyushImage,
                     about:
-                      "MERN stack developer skilled in Java and experienced in smooth database management.",
+                      "MERN stack developer creating innovative solutions that empower users and help students excel in real life.",
                     contribution:
                       "Connected backend APIs and managed database operations.",
                     Linkedin:
@@ -195,7 +220,7 @@ const AboutPage = () => {
                     name: "Aditya Raj Purohit",
                     image: AdityaImage,
                     about:
-                      "Java Spring expert with JSX skills, delivering robust systems and managing databases.",
+                      "Java & Spring Boot developer with expertise in REST/GraphQL APIs, microservices, and MySQL",
                     contribution:
                       "Managed deployment and cloud infrastructure.",
                     Linkedin:
@@ -203,7 +228,7 @@ const AboutPage = () => {
                     github: "https://github.com/deku740",
                   },
                 ].map((member, index) => (
-                  <div
+                  <article
                     key={index}
                     className="bg-orange-200 duration-500 hover:scale-105 md:p-6 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                     data-aos="fade-up"
@@ -212,11 +237,12 @@ const AboutPage = () => {
                     <img
                       alt={member.name}
                       src={member.image}
+                      loading="lazy"
                       className="rounded-full border-4 border-amber-500 shadow-lg shadow-amber-800 h-32 w-32 md:h-48 md:w-48 object-cover mx-auto mb-4"
                     />
 
                     {/* Description Section */}
-                    <h3 className="text-xl font-semibold drop-shadow-2xl text-orange-600 text-center">
+                    <h3 className="text-xl font-semibold drop-shadow-2xl text-orange-600 md:text-left text-center">
                       {member.name}
                     </h3>
                     <p className="text-gray-600 mt-2 md:text-left text-center">
@@ -248,7 +274,7 @@ const AboutPage = () => {
                         <FaGithub size={24} />
                       </a>
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -272,7 +298,10 @@ const AboutPage = () => {
                 Whether it's clearing doubts, sharing resources, or just seeking
                 motivation—we've got you covered.
               </p>
-              <a href="https://chat.whatsapp.com/FjdhY98IwT95IVwbEgW1td" target="blank">
+              <a
+                href="https://chat.whatsapp.com/E2r7c10BwECCA6R6J9cU0o"
+                target="blank"
+              >
                 <button className="bg-gradient-to-tl font-serif from-orange-400 from-15% to-orange-700 cursor-pointer text-orange-100 md:px-6 px-3 md:py-3 py-2 rounded-full font-semibold hover:bg-gradient-to-bl hover:scale-105 shadow-md hover:ring-1 hover:ring-amber-300 shadow-orange-900 duration-500 transition">
                   Be a Part of the Community
                 </button>

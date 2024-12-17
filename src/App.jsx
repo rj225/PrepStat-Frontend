@@ -7,18 +7,18 @@ import "aos/dist/aos.css";
 import "animate.css";
 import AboutPage from "./pages/AboutPage";
 import Loader from "./utils/Loader";
-import InterviewQuestionPage from "./pages/InterviewQuestionPage";
 import Contact from "./pages/ContactPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Testimonial from "./components/Testimonial";
-import TargetCompanies from "./components/TargetCompanies";
 import ComingSoon from "./pages/CoomingSoonPage";
+import PrivacyPolicy from "./pages/PrivacyPolicyPage";
+import Disclaimer from "./pages/DisclaimerPage";
+import TermsOfService from "./pages/TermsOfServicePage";
 
 const App = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, offset: 100 });
+    AOS.init({ duration: 700, offset: 100 });
   }, []);
 
   return (
@@ -34,6 +34,9 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </Router>
   );
