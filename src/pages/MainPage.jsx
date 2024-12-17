@@ -88,7 +88,7 @@ const MainContent = () => {
                   <button className="flex items-center space-x-2 md:text-lg text-base cursor-pointer bg-orange-400 text-font md:h-10 h-5 md:p-5 p-4 rounded-2xl shadow-md shadow-orange-700 bg-opacity-90 hover:scale-105 duration-500">
                     <FaInfoCircle />
                     <span className="font-semibold text-font">
-                      Want to know more about us
+                    Learn about us
                     </span>
                   </button>
                 </Link>
